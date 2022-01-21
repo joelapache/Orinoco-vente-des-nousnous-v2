@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Oribears est un site de vente en ligne d'oursons faits à la main et personnalisables.">
+  <meta name="robots" content="index, follow">
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <script src="https://kit.fontawesome.com/e1e907064b.js" crossorigin="anonymous"></script>
+  <link rel="shortcut icon" href="http://127.0.0.1:3000/images/logo_orinoco.png" type="image/png" />
+  <title>Oribears | Votre panier</title>
+  <style type="text/css" media="all">
+    p,
+    h1 {
+      font-family: 'Times New Roman', Times, serif;
+    }
+  
+    .mamama {
+      background-color: #F3E9F1;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+      align-items: center;
+  
+    }
+  
+    .unique {
+      text-decoration: none;
+  
+    }
+  
+ 
+    #output-id{
+      color: red;
+      font-size: 16px;
+      padding:10px 0;
+      text-align:center;
+    }
+  
+    #qte_in_basket{
+      position: absolute;
+      padding:1px 8px 3px 8px;
+      background: #333;
+      color:#fff;
+      font-size: 10px;
+      font-weight: 600;
+      border-radius: 20px;
+      margin-left: -10px;
+      margin-top: -8px;
+    }
+  
+    .fa-shopping-cart{
+      font-size: 25px;
+    }
+
+    #page_Produit{
+      margin: auto;
+      text-align: center;
+    }
+
+    .fa-trash{
+      display:flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      width: 30px;
+      height: 30px;
+      font-size: 14px;
+      background: #ccc;
+      border-radius: 30px;
+      transition: all .2s linear;
+    }
+
+    .fa-trash:hover{
+      background:#000;
+      color:#fff;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <h1 class="centrer">Panier</h1>
+      <div class="mamama">
+        <a href="index.html"><img class="logo" src="http://127.0.0.1:3000/images/logo_orinoco.png" alt="Orinoco"></a>
+        <div id="iconePanier">
+          <a  id="lien" href="panier.html"><i  class=" fas fa-shopping-cart"></i><span id="qte_in_basket">0</span></a>
+        </div>
+      </div>
+    </div>
+  </header>
+<!--  -->
+  <main id="page_Produit">
+    <h2>Récapitulatif de votre panier</h2>
+    <div>
+      <h3>Vos oursons</h3>
+    </div>
+    <div id="CarteddyDiv"></div>
+  </main>
+  <div class="container-sm">
+    <table class="table table-striped table-hover table-sm">
+      <thead class="thead-dark">
+        <tr>
+          <th scope="col">N°</th>
+          <th scope="col">Nom</th>
+          <th scope="col">Couleur</th>
+          <th scope="col">Prix Unitaire</th>
+          <th scope="col">Quatité</th>
+          <th scope="col"></th>
+        </tr>
+      </thead>
+      <tfoot id="tfoot-id" class="thead-dark"></tfoot>
+      <tbody id="tbody-id"></tbody>
+    </table>
+  </div>
+
+  <div class="container-sm" id="vidCacher">
+    <h1>Valider la Commande</h1>
+    <form  id="form" >
+      <div class="row mb-4">
+        <div class="col">
+          <input type="text" name="nom" id="nombox" class="form-control" placeholder="Nom">
+          <span id="NomErreur"></span>
+        </div>
+        <div class="col">
+          <input type="text" name="prenom" id="prenombox" class="form-control" placeholder="Prénom">
+          <span id="PreNomErreur"></span>
+        </div>
+      </div>
+      <div class="row mb-4">
+        <div class="col">
+          <input id="emailbox" type="email" class="form-control" placeholder="E-mail">
+          <span id="EmailErreur"></span>
+        </div>
+        <div class="col">
+          <input type="text" id="adressbox" name="adress" class="form-control" placeholder="Adresse">
+          <span id="AdressErreur"></span>
+        </div>
+        <div class="col">
+          <input type="text" name="ville" id="villebox" class="form-control row" placeholder="ville">
+          <span id="VilleErreur"></span>
+        </div>
+        </div>
+        <div class="form-group form">
+          <button type="submit" class="btn btn-secondary btn-lg desc" name="submit" id="submit">valider la commande</button>
+          <div id="outpout"></div>
+        </div>
+    </form>
+  </div>
+</body>
+
+
+<script type='text/javascript' src="Js/jquery-3.4.1.slim.min.js"></script>
+<script type='text/javascript' src="Js/popper.min.js"></script>
+<script type='text/javascript' src="Js/bootstrap.min.js"></script>
+<script type='text/javascript' src="Js/fonction_global.js"></script>
+<script type='text/javascript' src="Js/panier.js"></script>
+
+</body>
+
+</html>
